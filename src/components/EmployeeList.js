@@ -1,4 +1,4 @@
-/** @format */
+
 import { useState } from 'react'
 import Employee from "./Employee";
 
