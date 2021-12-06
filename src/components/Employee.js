@@ -1,6 +1,7 @@
-/** @format */
+
 
 const Employee = () => {
+
   return (
     <tr>
       <td>Thomas Hardy</td>
