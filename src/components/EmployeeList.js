@@ -1,5 +1,5 @@
 /** @format */
-import { useState } from 
+import { useState } from 'react'
 import Employee from "./Employee";
 
 const EmployeeList = () => {
