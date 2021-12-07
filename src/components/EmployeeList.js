@@ -1,4 +1,3 @@
-
 import { useContext } from "react";
 import Employee from "./Employee";
 import { EmployeeContext } from "../contexts/EmployeeContext";
@@ -6,7 +5,6 @@ import { EmployeeContext } from "../contexts/EmployeeContext";
 const  EmployeeList = () => {
 
    const {employees} = useContext(EmployeeContext)
-
   return (
     <table className='table table-striped table-hover'>
       <thead>
