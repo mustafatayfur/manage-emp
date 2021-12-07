@@ -1,5 +1,3 @@
-/** @format */
-
 import EmployeeList from "./components/EmployeeList";
 import EmployeeContextProvider from "./contexts/EmployeeContext";
 
