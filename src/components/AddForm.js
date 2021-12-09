@@ -1,6 +1,40 @@
+import {Form, Button} from 'react-bootstrap';
+
 const AddForm = ()=> {
 
     return(
-        <h1>Add Form</h1>
+       <Form>
+            <FormGroup>
+                <Form.Control
+                    type="text"
+                    placeholder= "Name *"
+                    required
+                />
+            </FormGroup>
+            <FormGroup>
+                <Form.Control
+                    type="email"
+                    placeholder= "Email *"
+                    required
+                />
+            </FormGroup>
+            <FormGroup>
+                <Form.Control
+                    as="textarea"
+                    placeholder= "Address *"
+                    rows = {3}
+                />
+            </FormGroup>
+            <FormGroup>
+                <Form.Control
+                    type="text"
+                    placeholder= "Phone"
+                />
+            </FormGroup>
+            <Button variant="success" type="submit" block>
+                Add new employee
+            </Button>
+       </Form>
     )
 }
+export default AddForm;
