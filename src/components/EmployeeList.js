@@ -1,4 +1,3 @@
-/** @format */
 
 import { useContext, useState } from "react";
 import Employee from "./Employee";
