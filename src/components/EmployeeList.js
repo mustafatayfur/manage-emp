@@ -15,10 +15,7 @@ const EmployeeList = () => {
   const handleShow = () => setShow(true);
 
   useEffect(() => {
-
-    return () => {
-      
-    }
+      handleClose();
   }, [employees])
 
   return (
