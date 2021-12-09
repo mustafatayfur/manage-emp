@@ -3,14 +3,14 @@
 import { useContext, useState } from "react";
 import Employee from "./Employee";
 import { EmployeeContext } from "../contexts/EmployeeContext";
-import Button from "@restart/ui/esm/Button";
+
 import {Button, Modal} from "react-bootstrap";
 import AddForm from "./AddForm";
 
 const EmployeeList = () => {
   const { employees } = useContext(EmployeeContext);
 
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
 
   return (
     <>
@@ -22,7 +22,7 @@ const EmployeeList = () => {
             </h2>
           </div>
           <div className='col-sm-6'>
-            <Button onClick={handleShow}
+            <Button 
               className='btn btn-success text-white'
               data-toggle='modal'>
               <i className='material-icons'>&#xE147;</i>{" "}
