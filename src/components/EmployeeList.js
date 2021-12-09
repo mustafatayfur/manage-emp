@@ -10,7 +10,10 @@ import AddForm from "./AddForm";
 const EmployeeList = () => {
   const { employees } = useContext(EmployeeContext);
 
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
+
+  const handleClose = ()=> setShow(false);
+  const handleShow = () => setShow(true)
 
   return (
     <>
@@ -22,7 +25,7 @@ const EmployeeList = () => {
             </h2>
           </div>
           <div className='col-sm-6'>
-            <Button 
+            <Button onClick={handleShow}
               className='btn btn-success text-white'
               data-toggle='modal'>
               <i className='material-icons'>&#xE147;</i>{" "}
@@ -42,12 +45,12 @@ const EmployeeList = () => {
           </tr>
         </thead>
         <tbody>
-          <Employee employees={employees} />
+          <Employee employees={employees}/>
         </tbody>
       </table>
 
-      <Modal show={show}>
-        <Modal.Header>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header className="modal-header" >
             <Modal.Title>
                 Add Employee
             </Modal.Title>
@@ -56,8 +59,8 @@ const EmployeeList = () => {
             <AddForm/>
         </Modal.Body>
         <Modal.Footer>
-            <Button variant="secondary">
-                Close Button
+            <Button variant="secondary" onClick={handleClose}>
+                Close Modal
             </Button>
         </Modal.Footer>
 
