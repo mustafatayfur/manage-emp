@@ -1,5 +1,5 @@
 
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import Employee from "./Employee";
 import { EmployeeContext } from "../contexts/EmployeeContext";
 
@@ -12,7 +12,14 @@ const EmployeeList = () => {
   const [show, setShow] = useState(false)
 
   const handleClose = ()=> setShow(false);
-  const handleShow = () => setShow(true)
+  const handleShow = () => setShow(true);
+
+  useEffect(() => {
+
+    return () => {
+      
+    }
+  }, [employees])
 
   return (
     <>
