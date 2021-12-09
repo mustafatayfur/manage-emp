@@ -4,28 +4,28 @@ const AddForm = ()=> {
 
     return(
        <Form>
-            <FormGroup>
+            <FormGroup className="formgroup">
                 <Form.Control
                     type="text"
                     placeholder= "Name *"
                     required
                 />
             </FormGroup>
-            <FormGroup>
+            <FormGroup className="formgroup">
                 <Form.Control
                     type="email"
                     placeholder= "Email *"
                     required
                 />
             </FormGroup>
-            <FormGroup>
+            <FormGroup className="formgroup">
                 <Form.Control
                     as="textarea"
                     placeholder= "Address *"
                     rows = {3}
                 />
             </FormGroup>
-            <FormGroup>
+            <FormGroup className="formgroup">
                 <Form.Control
                     type="text"
                     placeholder= "Phone"
