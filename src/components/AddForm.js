@@ -1,42 +1,82 @@
-import {Form, Button, FormGroup} from 'react-bootstrap';
-import { EmployeeContext } from '../contexts/EmployeeContext';
-import { useContext } from 'react';
+/** @format */
 
-const AddForm = ()=> {
+import { Form, Button, FormGroup } from "react-bootstrap";
+import { EmployeeContext } from "../contexts/EmployeeContext";
+import { useContext, useState } from "react";
 
-    return(
-       <Form>
-            <FormGroup className="formgroup">
-                <Form.Control
-                    type="text"
-                    placeholder= "Name *"
-                    required
-                />
-            </FormGroup>
-            <FormGroup className="formgroup">
-                <Form.Control
-                    type="email"
-                    placeholder= "Email *"
-                    required
-                />
-            </FormGroup>
-            <FormGroup className="formgroup">
-                <Form.Control
-                    as="textarea"
-                    placeholder= "Address *"
-                    rows = {3}
-                />
-            </FormGroup>
-            <FormGroup className="formgroup">
-                <Form.Control
-                    type="text"
-                    placeholder= "Phone"
-                />
-            </FormGroup>
-            <Button variant="success" type="submit" block>
-                Add new employee
-            </Button>
-       </Form>
-    )
-}
+const AddForm = () => {
+  const { addEmployee } = useContext(EmployeeContext);
+
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [phone, setPhone] = useState("");
+
+  const [newEmployee, setNewEmployee] = useState({
+    name: "",
+    email: "",
+    address: "",
+    phone: "",
+  });
+
+  const onInputChange = (e)=> {
+      setNewEmployee({...newEmployee, [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addEmployee(name, email, address, phone);
+  };
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Form.Group className='formgroup'>
+        <Form.Control
+          type='text'
+          placeholder='Name *'
+          name='name' //2.metodda name propertilerini ekledi.
+          value={name}
+          // onChange={e => setName(e.target.value)}
+          onChange={(e) => onInputChange(e)}
+          required
+        />
+      </Form.Group>
+      <Form.Group className='formgroup'>
+        <Form.Control
+          type='email'
+          placeholder='Email *'
+          name='email'
+          value={email}
+          // onChange={e => setEmail(e.target.value)}
+          onChange={(e) => onInputChange(e)}
+          required
+        />
+      </Form.Group>
+      <Form.Group className='formgroup'>
+        <Form.Control
+          as='textarea'
+          placeholder='Address *'
+          name='address'
+          value={address}
+          // onChange={e => setAddress(e.target.value)}
+          onChange={(e) => onInputChange(e)}
+          rows={3}
+        />
+      </Form.Group>
+      <Form.Group className='formgroup'>
+        <Form.Control
+          type='number'
+          placeholder='Phone *'
+          name='phone'
+          value={phone}
+          // onChange={e => setPhone(e.target.value)}
+          onChange={(e) => onInputChange(e)}
+        />
+      </Form.Group>
+      <Button variant='success' type='submit' block>
+        Add new employee
+      </Button>
+    </Form>
+  );
+};
 export default AddForm;
