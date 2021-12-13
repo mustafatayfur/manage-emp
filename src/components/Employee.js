@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { EmployeeContext } from "../contexts/EmployeeContext";
+
 const Employee = ({ employees }) => {
+
+  const { deleteEmployee } = useContext(EmployeeContext);
+
   return (
     <>
       {employees.map((employee, index) => (
@@ -17,6 +23,7 @@ const Employee = ({ employees }) => {
               </i>
             </button>
             <button
+              onClick={()=> deleteEmployee(employee.id)}
               href='#deleteEmployeeModal'
               className='btn text-danger btn-act'
               data-toggle='modal'>
