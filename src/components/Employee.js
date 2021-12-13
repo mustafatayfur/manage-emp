@@ -8,14 +8,17 @@ const Employee = ({ employees }) => {
           <td>{employee.address}</td>
           <td>{employee.phone}</td>
           <td>
-            <a href='#editEmployeeModal' className='edit' data-toggle='modal'>
+            <button
+            href='#deleteEmployeeModal'
+            className='btn text-warning btn-act'
+            data-toggle='modal'>
               <i className='material-icons' data-toggle='tooltip' title='Edit'>
                 &#xE254;
               </i>
-            </a>
-            <a
+            </button>
+            <button
               href='#deleteEmployeeModal'
-              className='delete'
+              className='btn text-danger btn-act'
               data-toggle='modal'>
               <i
                 className='material-icons'
@@ -23,7 +26,7 @@ const Employee = ({ employees }) => {
                 title='Delete'>
                 &#xE872;
               </i>
-            </a>
+            </button>
           </td>
         </tr>
       ))}
