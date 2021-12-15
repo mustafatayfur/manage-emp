@@ -2,7 +2,6 @@
 import { useContext, useState, useEffect } from "react";
 import Employee from "./Employee";
 import { EmployeeContext } from "../contexts/EmployeeContext";
-
 import {Button, Modal} from "react-bootstrap";
 import AddForm from "./AddForm";
 
