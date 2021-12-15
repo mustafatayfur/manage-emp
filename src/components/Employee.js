@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import { EmployeeContext } from "../contexts/EmployeeContext";
 
-const Employee = ({ employees }) => {
+const Employee = ({ employee }) => {
 
   const { deleteEmployee } = useContext(EmployeeContext);
 
   return (
     <>
-      {employees.map((employee, index) => (
-        <tr key={index}>
+      
           <td>{employee.name}</td>
           <td>{employee.email}</td>
           <td>{employee.address}</td>
@@ -35,8 +34,6 @@ const Employee = ({ employees }) => {
               </i>
             </button>
           </td>
-        </tr>
-      ))}
     </>
   );
 };

@@ -17,7 +17,6 @@ const EmployeeList = () => {
       handleClose();
   }, [employees])
 
-  
 
   return (
     <>
@@ -49,7 +48,13 @@ const EmployeeList = () => {
           </tr>
         </thead>
         <tbody>
-          <Employee employees={employees}/>
+            {
+              employees.map((employee)=> (
+                <tr key={employee.id}>
+                    <Employee employee = {employee} />
+                </tr>
+              ))
+            }
         </tbody>
       </table>
 
@@ -69,6 +74,8 @@ const EmployeeList = () => {
         </Modal.Footer>
 
       </Modal>
+
+      
     </>
   );
 };
