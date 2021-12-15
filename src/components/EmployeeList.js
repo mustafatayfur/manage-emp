@@ -49,7 +49,7 @@ const EmployeeList = () => {
         </thead>
         <tbody>
             {
-              employees.map((employee)=> (
+              employees.sort((a,b) => (a.name > b.name ? -1 : 1)).map((employee)=> (
                 <tr key={employee.id}>
                     <Employee employee = {employee} />
                 </tr>
@@ -81,3 +81,5 @@ const EmployeeList = () => {
 };
 
 export default EmployeeList;
+
+// .sort((a,b) => a.name.localeCompare(b.name))
