@@ -2,7 +2,7 @@
 import { useContext, useState, useEffect } from "react";
 import Employee from "./Employee";
 import { EmployeeContext } from "../contexts/EmployeeContext";
-import {Button, Modal} from "react-bootstrap";
+import {Button, Modal, Alert} from "react-bootstrap";
 import AddForm from "./AddForm";
 
 const EmployeeList = () => {
@@ -13,9 +13,19 @@ const EmployeeList = () => {
   const handleClose = ()=> setShow(false);
   const handleShow = () => setShow(true);
 
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleShowAlert = () => {
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000); //3saniye sonra kapansın.
+  };
+
   useEffect(() => {
-      handleClose();
-  }, [employees])
+    handleClose();
+    return () => handleShowAlert();
+  }, [employees]);
 
 
   return (
@@ -37,6 +47,11 @@ const EmployeeList = () => {
           </div>
         </div>
       </div>
+
+      <Alert show={showAlert} variant="success">
+        Employee List successfullyupdated!
+      </Alert>
+
       <table className='table table-striped table-hover'>
         <thead>
           <tr>
