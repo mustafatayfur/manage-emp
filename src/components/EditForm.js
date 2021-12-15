@@ -41,7 +41,7 @@ const EditForm = () => {
         />
       </Form.Group>
       <Button variant='success' type='submit' block>
-        Edit Employee
+        Update Employee
       </Button>
     </Form>
   );
