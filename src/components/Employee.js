@@ -23,7 +23,39 @@ const Employee = ({ employee }) => {
           <td>{employee.address}</td>
           <td>{employee.phone}</td>
           <td>
-            
+          <OverlayTrigger
+          overlay = {
+              <Tooltip id={`tooltip-top`}>
+                  Edit
+              </Tooltip>
+          }>
+          <button
+          onClick={handleShow}
+          className='btn text-warning btn-act'
+          data-toggle='modal'>
+            <i className='material-icons'>
+              &#xE254;
+            </i>
+          </button>
+        </OverlayTrigger>
+        <OverlayTrigger
+          overlay = {
+              <Tooltip id={`tooltip-top`}>
+                  Delete
+              </Tooltip>
+          }>
+          <button
+          onClick={()=> deleteEmployee(employee.id)}
+          href='#deleteEmployeeModal'
+          className='btn text-danger btn-act'
+          data-toggle='modal'>
+          <i
+            className='material-icons'
+          >
+            &#xE872;
+          </i>
+          </button>
+        </OverlayTrigger>
             
             
           </td>
