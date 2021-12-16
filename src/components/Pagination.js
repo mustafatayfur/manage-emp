@@ -3,7 +3,6 @@ import {useState } from "react";
 
 const Pagination = ({pages, setCurrentPage, currentEmployees, sortedEmployees}) => {
 
-
     const numOfPages = [];
 
     for (let i=1; i <= pages; i++) {
@@ -30,7 +29,6 @@ const Pagination = ({pages, setCurrentPage, currentEmployees, sortedEmployees}) 
                             onClick = {() => setCurrentButton(page)}
                         >{page}</a></li>
                     )
-                    
                 })
             }
 
@@ -44,7 +42,6 @@ const Pagination = ({pages, setCurrentPage, currentEmployees, sortedEmployees}) 
 }
 
 export default Pagination;
-
 
 /* <li class="page-item"><a href="#" class="page-link">1</a></li>
 <li class="page-item"><a href="#" class="page-link">2</a></li>

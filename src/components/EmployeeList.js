@@ -101,8 +101,6 @@ const EmployeeList = () => {
                 </Button>
             </Modal.Footer>
         </Modal>
-
-        
         </>
     )
 }
@@ -110,5 +108,4 @@ const EmployeeList = () => {
 export default EmployeeList;
 
 // .sort((a,b) => a.name.localeCompare(b.name))
-
 // sort((a,b) => (a.name < b.name ? -1 : 1 ))
